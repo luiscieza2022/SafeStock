@@ -8,6 +8,6 @@ terraform {
   }
 }
 
-provider "luisUpao" {
+provider "aws" {
   region = "us-east-2"
 }
