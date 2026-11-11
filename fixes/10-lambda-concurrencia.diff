@@ -1,0 +1,13 @@
+diff --git a/iac/lambda.tf b/iac/lambda.tf
+index 33a136f..ca1e48d 100644
+--- a/iac/lambda.tf
++++ b/iac/lambda.tf
+@@ -39,6 +39,8 @@ resource "aws_lambda_function" "business_logic" {
+   source_code_hash = data.archive_file.business_logic.output_base64sha256
+   timeout          = 10
+ 
++  reserved_concurrent_executions = 100
++
+   tracing_config {
+     mode = "Active"
+   }

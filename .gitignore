@@ -1,0 +1,8 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+iac/lambda/*.zip
+
+# Reportes locales de Checkov
+iac/results.xml/

@@ -1,0 +1,14 @@
+diff --git a/iac/dynamodb.tf b/iac/dynamodb.tf
+index 8022c16..5b26404 100644
+--- a/iac/dynamodb.tf
++++ b/iac/dynamodb.tf
+@@ -20,4 +20,9 @@ resource "aws_dynamodb_table" "inventory" {
+   point_in_time_recovery {
+     enabled = true
+   }
++
++  server_side_encryption {
++    enabled     = true
++    kms_key_arn = aws_kms_key.main.arn
++  }
+ }

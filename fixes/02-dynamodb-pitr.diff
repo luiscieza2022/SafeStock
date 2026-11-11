@@ -1,0 +1,13 @@
+diff --git a/iac/dynamodb.tf b/iac/dynamodb.tf
+index 8274d86..8022c16 100644
+--- a/iac/dynamodb.tf
++++ b/iac/dynamodb.tf
+@@ -16,4 +16,8 @@ resource "aws_dynamodb_table" "inventory" {
+ 
+   stream_enabled   = true
+   stream_view_type = "NEW_AND_OLD_IMAGES"
++
++  point_in_time_recovery {
++    enabled = true
++  }
+ }
