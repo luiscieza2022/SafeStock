@@ -20,4 +20,9 @@ resource "aws_dynamodb_table" "inventory" {
   point_in_time_recovery {
     enabled = true
   }
+
+  server_side_encryption {
+    enabled     = true
+    kms_key_arn = aws_kms_key.main.arn
+  }
 }
