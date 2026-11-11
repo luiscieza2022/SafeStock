@@ -39,6 +39,8 @@ resource "aws_lambda_function" "business_logic" {
   source_code_hash = data.archive_file.business_logic.output_base64sha256
   timeout          = 10
 
+  reserved_concurrent_executions = 100
+
   tracing_config {
     mode = "Active"
   }
